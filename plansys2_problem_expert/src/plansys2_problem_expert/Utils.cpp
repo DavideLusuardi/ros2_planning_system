@@ -303,7 +303,7 @@ std::tuple<bool, bool, double> evaluate(
       }
 
     default:
-      std::cerr << "evaluate: Error parsing expresion [" <<
+      std::cerr << "evaluate: Error parsing expression [" <<
         parser::pddl::toString(tree, node_id) << "]" << std::endl;
   }
 

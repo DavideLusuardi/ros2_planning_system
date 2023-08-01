@@ -21,3 +21,6 @@ The Domain Expert does not change while active, accessing its functionality thro
 - `/domain_expert/get_domain_predicates` [[`plansys2_msgs::srv::GetStates`](../plansys2_msgs/srv/GetStates.srv)]
 - `/domain_expert/get_domain_types` [[`plansys2_msgs::srv::GetDomainTypes`](../plansys2_msgs/srv/GetDomainTypes.srv)]
 - `/domain_expert/get_domain_constants` [[`plansys2_msgs::srv::GetDomainConstants`](../plansys2_msgs/srv/GetDomainConstants.srv)]
+
+<!-- TODO: the listed services do not match the actual ones -->
+<!-- TODO: the services listed here (https://plansys2.github.io/design/index.html#services) do not match the actual ones -->

@@ -17,7 +17,8 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
@@ -76,6 +77,28 @@ def generate_launch_description():
         description="Behavior tree builder plugin.",
     )
 
+    plansys2_upf_domain_expert_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory('plansys2_upf_domain_expert'),
+            'launch',
+            'domain_expert_launch.py')),
+        launch_arguments={
+          'model_file': model_file,
+          'namespace': namespace,
+          'params_file': params_file
+          }.items())
+
+    plansys2_upf_problem_expert_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory('plansys2_upf_problem_expert'),
+            'launch',
+            'problem_expert_launch.py')),
+        launch_arguments={
+          'model_file': model_file,
+          'namespace': namespace,
+          'params_file': params_file
+          }.items())
+
     plansys2_node_cmd = Node(
         package='plansys2_bringup',
         executable='plansys2_node',
@@ -104,6 +127,8 @@ def generate_launch_description():
     ld.add_action(declare_params_file_cmd)
 
     # Declare the launch options
+    ld.add_action(plansys2_upf_domain_expert_cmd)
+    ld.add_action(plansys2_upf_problem_expert_cmd)
     ld.add_action(plansys2_node_cmd)
 
     return ld

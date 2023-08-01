@@ -78,7 +78,8 @@ def generate_launch_description():
 
     domain_expert_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(
-            get_package_share_directory('plansys2_domain_expert'),
+            get_package_share_directory('plansys2_upf_domain_expert'),
+            # get_package_share_directory('plansys2_domain_expert'),
             'launch',
             'domain_expert_launch.py')),
         launch_arguments={
@@ -89,7 +90,8 @@ def generate_launch_description():
 
     problem_expert_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(
-            get_package_share_directory('plansys2_problem_expert'),
+            get_package_share_directory('plansys2_upf_problem_expert'),
+            # get_package_share_directory('plansys2_problem_expert'),
             'launch',
             'problem_expert_launch.py')),
         launch_arguments={

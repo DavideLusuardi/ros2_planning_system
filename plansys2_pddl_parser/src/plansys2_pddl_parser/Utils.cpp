@@ -726,7 +726,7 @@ plansys2_msgs::msg::Node::SharedPtr fromString(plansys2_msgs::msg::Tree & tree, 
     }
     // LCOV_EXCL_START
     default:
-      std::cerr << "fromString: Error parsing expresion [" << wexpr << "]" << std::endl;
+      std::cerr << "fromString: Error parsing expression [" << wexpr << "]" << std::endl;
       // LCOV_EXCL_STOP
   }
 
@@ -894,7 +894,7 @@ std::vector<uint32_t> getSubtreeIds(const plansys2_msgs::msg::Tree & tree)
         return tree.nodes.front().children;
       }
     default:
-      std::cerr << "getSubtreeIds: Error parsing expresion [" << toString(tree) << "]" << std::endl;
+      std::cerr << "getSubtreeIds: Error parsing expression [" << toString(tree) << "]" << std::endl;
   }
 
   return {};

@@ -34,13 +34,13 @@ int main(int argc, char ** argv)
 
   rclcpp::executors::MultiThreadedExecutor exe(rclcpp::ExecutorOptions(), 8);
 
-  auto domain_node = std::make_shared<plansys2::DomainExpertNode>();
-  auto problem_node = std::make_shared<plansys2::ProblemExpertNode>();
+  // auto domain_node = std::make_shared<plansys2::DomainExpertNode>();
+  // auto problem_node = std::make_shared<plansys2::ProblemExpertNode>();
   auto planner_node = std::make_shared<plansys2::PlannerNode>();
   auto executor_node = std::make_shared<plansys2::ExecutorNode>();
 
-  exe.add_node(domain_node->get_node_base_interface());
-  exe.add_node(problem_node->get_node_base_interface());
+  // exe.add_node(domain_node->get_node_base_interface());
+  // exe.add_node(problem_node->get_node_base_interface());
   exe.add_node(planner_node->get_node_base_interface());
   exe.add_node(executor_node->get_node_base_interface());
 
